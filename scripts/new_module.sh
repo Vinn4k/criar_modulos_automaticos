@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Digite o nome do módulo: " nome_modulo
+read -p "Digite o nome do módulo Em PascalCase: " nome_modulo
 # Chamar o comando mason make module com o nome do módulo fornecido
 echo "Criando Modulo"
 ./create_module.bat "$nome_modulo"
@@ -44,6 +44,9 @@ done < "$output"
 mv "$temp" "$output"
 
 echo "Linha adicionada com sucesso!"
+
+echo "Criando rota"
+./insert_route_in_approutes.sh "$nome_modulo_camel"
 
 echo "Adicionando Import"
 ./import_module.sh "$nome_modulo"

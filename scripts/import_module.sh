@@ -44,3 +44,5 @@ done < "$output"
 mv "$temp" "$output"
 
 echo "Linha e import adicionados com sucesso!"
+
+
